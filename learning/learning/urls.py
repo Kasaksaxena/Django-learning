@@ -23,7 +23,9 @@ urlpatterns = [
     path('about-us/',views.aboutUS),
     path('contact-us/',views.contactUS),
     path('course/',views.Course),
-    path('course/<int:courseid>',views.courseDetails),
+   # path('course/<int:courseid>',views.courseDetails),
+   # path('course/<str:courseid>',views.courseDetails),
+     path('course/<slug:courseid>',views.courseDetails),
     
     
     
