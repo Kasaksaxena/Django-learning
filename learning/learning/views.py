@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 
 def aboutUS(request):
     return HttpResponse("Hello World")
@@ -11,4 +12,7 @@ def Course(request):
 
 def courseDetails(request,courseid):
     return HttpResponse(courseid)
+
+def homePage(request):
+    return render(request,"index.html")
     

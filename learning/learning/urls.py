@@ -26,7 +26,7 @@ urlpatterns = [
    # path('course/<int:courseid>',views.courseDetails),
    # path('course/<str:courseid>',views.courseDetails),
      path('course/<slug:courseid>',views.courseDetails),
-    
+     path('',views.homePage),
     
     
     
