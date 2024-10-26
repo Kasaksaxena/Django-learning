@@ -10,6 +10,23 @@
      consectetur aspernatur accusamus optio similique molestiae officiis culpa consequuntur? 
     Explicabo ab quibusdam sed?</P>
     <div class="main">{{Name}}</div>
+
+    {% for n in list%}
+    <div>{{forloop.counter}}{{n}}</div>
+    {% endfor %}
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+        </tr>
+        {% for d in student_details %}
+        <tr>
+            <td>{{d.name}}</td>
+            <td>{{d.phone}}</td>
+        </tr>
+        {% endfor%}
+    </table>
     
 </body>
 </html>

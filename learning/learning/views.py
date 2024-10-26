@@ -16,7 +16,13 @@ def courseDetails(request,courseid):
 def homePage(request):
     data={
         'title':"Home page",
-        'Name':"Kasak Saxena"
+        'Name':"Kasak Saxena",
+        "list":["python","java","PHP"],
+        "student_details":[
+            {'name':'anita','phone':9856743215},
+            {'name':"raj","phone":8547632514}
+        ]
+        
     }
     return render(request,"index.html",data)
     
