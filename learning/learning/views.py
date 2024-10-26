@@ -18,6 +18,7 @@ def homePage(request):
         'title':"Home page",
         'Name':"Kasak Saxena",
         "list":["python","java","PHP"],
+        "Numbers":[5,40,90,7,30,10],
         "student_details":[
             {'name':'anita','phone':9856743215},
             {'name':"raj","phone":8547632514}
