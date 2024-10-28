@@ -2,13 +2,14 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 def aboutUS(request):
-    return HttpResponse("Hello World")
+    return render(request,"about.html")
+    
 
 def contactUS(request):
-    return HttpResponse("<b>Hello Kasak Saxena </b>")
+    return render(request,"contact.html")
 
-def Course(request):
-    return HttpResponse("Nice to Meet you")
+def Login(request):
+    return render(request,"login-sginup.html")
 
 def courseDetails(request,courseid):
     return HttpResponse(courseid)
