@@ -14,7 +14,7 @@ def courseDetails(request,courseid):
     return HttpResponse(courseid)
 
 def homePage(request):
-    data={
+    """data={
         'title':"Home page",
         'Name':"Kasak Saxena",
         "list":["python","java","PHP"],
@@ -26,4 +26,8 @@ def homePage(request):
         
     }
     return render(request,"index.html",data)
+    """
+    
+    return render(request,"index.html")
+
     

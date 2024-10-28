@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+<body>
+   <P> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto saepe rem eligendi eius veritatis. Asperiores laborum aliquam,
+     consectetur aspernatur accusamus optio similique molestiae officiis culpa consequuntur? 
+    Explicabo ab quibusdam sed?</P>
+    <div class="main">{{Name}}</div>
+    
+    {% for n in list%}
+    <div>{{forloop.counter}}{{n}}</div>
+    {% endfor %}
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+        </tr>
+        {% for d in student_details %}
+        <tr>
+            <td>{{d.name}}</td>
+            <td>{{d.phone}}</td>
+        </tr>
+        {% endfor%}
+    </table>
+
+    {% if Numbers|length > 0 %}
+       {% for n in Numbers %}
+             <div>{{n}}</div>
+           
+           {% endfor %}
+       {% else %}
+             No Data Found
+             
+       {% endif %}      
+    
+    
+</body>
+</html>
