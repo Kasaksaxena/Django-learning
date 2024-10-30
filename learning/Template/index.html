@@ -1,435 +1,442 @@
+{% extends 'base.html' %}
 {% load static %}
- 
- 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="{ % static 'images/logo1.png' %}" type="image/x-icon">
-    <title>TrendTrove - Ecommerce</title>
-    <link rel="stylesheet" href="{ % static 'static/preloader.js' %}">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="{ % static 'CSS/style.css' %}">
-    <link rel="stylesheet" herf="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-    <link rel="stylesheet" href="{% static 'CSS/popup.css' %}">
-
-</head>
-
-<body>
-    { % extends 'base.html' %}
-  { % block content %}
- 
-     <!-- preloader -->
-  <div id="preloader">
-    <div class="wrapper">
-        <div class="box-wrap">
-            <div class="box one"></div>
-            <div class="box two"></div>
-            <div class="box three"></div>
-            <div class="box four"></div>
-            <div class="box five"></div>
-            <div class="box six"></div>
-        </div>
-    </div>
-</div>
-    <!-- ProgressBar -->
-    <div id="progress-bar"></div>
-    <!-- ProgressBar Ends -->
-
-   
- <!-- banner area  -->
-    <section class="banner">
-
-        <div class="slide">
-
-            <div class="slide-details" data-aos="fade-up" data-aos-easing="ease-in-out">
-                <h1>Discover Tomorrow’s Trends Today with TrendTrove!</h1>
-                <p>
-                    At TrendTrove, we bring you the most stylish and trendy fashion items, all in one place!
-                </p>
-                <button class="btn">
-                    Explore More
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pop up Html  -->
-         <!-- Pop-up for email registration -->
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <div class="popup-left">
-                <img src="{ % static 'images/popup1.jpg' %}" alt="Fashion Image">
-            </div>
-            <div class="popup-right">
-                <a href="#" class="no-thanks"><img class="popuplogo" src="{ % static 'images/logo.png' %}" alt="Logo" srcset=""></a>
-                <h1>Join TrendTrove!</h1>
-
-                <h2 class="popuph2">Unlock Your Fashion</h2>
-                <p>Sign up now to enjoy <strong> 20% off </strong> your first order and exclusive updates on the latest trends.</p>
-                <form id="emailForm">
-                    <input type="email" id="popup-email" placeholder="Enter your email" required>
-                    <button type="submit" class="signup-btn">Continue</button>
-                </form>
-                <a href="#" class="no-thanks close-btn">No thanks, I’ll shop full price</a>
-                <p class="terms">By signing up, you agree to our <a href="terms-conditions.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>.</p>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- featured section  -->
-
-    <section class="featured">
-        <div class="featured-box-1">
-            <div class="overlay">
-                <a href="./shopclothing.html" class="btn btn-white">
-                    Shop Clothing
-                </button></a>
-            </div>
-            <div class="bg-image">
-                <img src="{% static 'images/youngcouple1.jpg' }" alt="product">
-            </div>
-        </div>
-
-        <div class="featured-box-2">
-            <div class="featured-box-2-box-1">
-                <div class="overlay">
-                    <a href="/static/products/sunglasses.html" class="btn btn-white">
-                        Shop Sunglasses
-                    </a>
-                </div>
-                <div class="bg-image">
-                    <img src="{% static 'images/shop-glasses.webp' %}" alt="product">
-                </div>
-            </div>
-            <div class="featured-box-2-box-2">
-                <div class="overlay">
-                    <a href="/static/products/bags.html" class="btn btn-white">
-                        Shop Bags
-                    </a>
-                </div>
-                <div class="bg-image">
-                    <img src="{% static 'images/shop-bags.webp' %}" alt="product">
-                </div>
-            </div>
-
-            <div class="featured-box-2-box-3">
-                <div class="overlay">
-                    <a href="./products/sandals.html" class="btn btn-white">
-                        Shop Sandals
-                    </a>
-                </div>
-                <div class="bg-image">
-                    <img src="{% static 'images/shop-sandals.webp' %}" alt="product">
-                </div>
-            </div>
-        </div>
-
-        <div class="featured-box-3">
-            <div class="overlay">
-                <a href="sneaker.html" class="btn btn-white">
-                    Shop Sneakers
-                </a>
-                
-            </div>
-            <div class="bg-image">
-                <img src="{ % static 'images/shop-sneakers.webp' %}" alt="product">
-            </div>
-        </div>
-    </section>
-
-
-    <!-- products section  -->
-
-    <section class="products">
-        <h1 class="section-title">Top Products Of The Season!</h1>
-
-        <div class="products-list">
-
-            <div class="product" data-aos="fade-up" data-aos-delay="200">
-                <div class="product-image">
-                    <div class="main-image">
-                        <img src="{ % static 'images/blackstrippedmaneffectimage.jpg' %}" alt="product">
-                    </div>
-                    <div class="effect-image">
-                        <img src="{ % static 'images/blackstrippedmannormal.jpeg' %}" alt="product">
-                    </div>
-                    <div class="overlay-image">
-                        <button class="heartbtn" id="heart">
-                            &#10084;
-                        </button>
-                    </div>
-
-                </div>
-
-                <div class="product-details">
-                    <p class="product-name">Black Striped Shirt</p>
-                    <p class="product-price">- $199</p> 
-                </div>
-
-            </div>
-
-            <div class="product" data-aos="fade-up" data-aos-delay="200">
-
-                <div class="product-image">
-
-                    <div class="main-image">
-                        <img src="{ % static 'images/product2.jpg' %}" alt="product">
-                    </div>
-                    <div class="effect-image">
-                        <img src="{ % static 'images/product2-effect.jpg' %}" alt="product">
-                    </div>
-                    <div class="overlay-image">
-                        <button class="heartbtn" id="heart">
-                            &#10084;
-                        </button>
-                    </div>
-
-
-                </div>
-
-                <div class="product-details">
-                    <p class="product-name">Black Top</p>
-                    <p class="product-price">- $99</p> 
-                </div>
-
-            </div>
-
-
-            <div class="product" data-aos="fade-up" data-aos-delay="200">
-
-                <div class="product-image">
-
-                    <div class="main-image">
-                        <img src="{ % static 'images/product3-effect.jpg' %}" alt="product">
-                    </div>
-                    <div class="effect-image">
-                        <img src="{ % static 'images/product3.webp' %}" alt="product">
-                    </div>
-                    <div class="overlay-image">
-                        <button class="heartbtn" id="heart">
-                            &#10084;
-                        </button>
-                    </div>
-
-
-                </div>
-
-                <div class="product-details">
-                    <p class="product-name">Olive Green Top</p>
-                    <p class="product-price">- $100</p> 
-                </div>
-
-            </div>
-
-            <div class="product" data-aos="fade-up" data-aos-delay="200">
-
-                <div class="product-image">
-
-                    <div class="main-image">
-                        <img src="{ % static 'images/whitetshirtmen.jpeg' %}" alt="product">
-                    </div>
-                    <div class="effect-image">
-                        <img src="{ % static 'images/whitetshirtmeneffect.jpeg' %}" alt="product">
-                    </div>
-                    <div class="overlay-image">
-                        <button class="heartbtn" id="heart">
-                            &#10084;
-                        </button>
-                    </div>
-
-
-                </div>
-
-                <div class="product-details">
-                    <p class="product-name">White T-shirt</p>
-                    <p class="product-price">- $100</p> 
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- category section  -->
-
-    <section class="categories">
-
-        <div class="category" data-aos="zoom-in" data-aos-delay="200">
-
-            <div class="cat-img">
-                <img src="{ % static 'images/category1.webp'%}" alt="category">
-            </div>
-
-            <div class="product-details">
-                <p class="product-name">Night Suits</p>
-            </div>
-
-        </div>
-
-        <div class="category" data-aos="zoom-in" data-aos-delay="200">
-
-            <div class="cat-img">
-                <img src="{ % static 'images/category2.webp'%}" alt="category">
-            </div>
-
-            <div class="product-details">
-                <p class="product-name">Hand Bags</p>
-            </div>
-        </div>
-
-        <div class="category" data-aos="zoom-in" data-aos-delay="200">
-            <div class="cat-img">
-                <img src="{ % static 'images/category3.webp'%}" alt="category">
-            </div>
-            <div class="product-details">
-                <p class="product-name">Funky Tops</p>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- products section 2 -->
-    <section class="products">
-        <h1 class="section-title">Most Bought Products Of The Month!</h1>
-
-        <div class="products-list">
-
-            <div class="product" data-aos="fade-up" data-aos-delay="200">
-
-                <div class="product-image">
-
-                    <div class="main-image">
-                        <img src="{ % static 'images/product5.jpg' %}" alt="product">
-                    </div>
-                    <div class="effect-image">
-                        <img src="{ % static 'images/product5-effect.jpg' %}" alt="product">
-                    </div>
-                    <div class="overlay-image">
-                        <button class="heartbtn" id="heart">
-                            &#10084;
-                        </button>
-                    </div>
-                </div>
-
-                <div class="product-details">
-                    <p class="product-name">Black Top</p>
-                    <p class="product-price">- $100</p> 
-                </div>
-            </div>
-
-            <div class="product" data-aos="fade-up" data-aos-delay="200">
-
-                <div class="product-image">
-
-                    <div class="main-image">
-                        <img src="{% static 'images/product6.jpg' %}" alt="product">
-                    </div>
-                    <div class="effect-image">
-                        <img src="{% static 'images/product6-effect.jpg' %}" alt="product">
-                    </div>
-                    <div class="overlay-image">
-                        <button class="heartbtn" id="heart">
-                            &#10084;
-                        </button>
-                    </div>
-                </div>
-
-                <div class="product-details">
-                    <p class="product-name">Red Top</p>
-                    <p class="product-price">- $100</p> 
-                </div>
-
-            </div>
-
-            <div class="product" data-aos="fade-up" data-aos-delay="200">
-
-                <div class="product-image">
-                    <div class="main-image">
-                        <img src="{ % static 'images/tealimageshirtmen.jpeg' %}" alt="product">
-                    </div>
-                    <div class="effect-image">
-                        <img src="{ % static 'images/tealshirtmeneffect.jpeg' %}" alt="product">
-                    </div>
-                    <div class="overlay-image">
-                        <button class="heartbtn" id="heart">
-                            &#10084;
-                        </button>
-                    </div>
-                </div>
-
-                <div class="product-details">
-                    <p class="product-name">Light Teal Shirt</p>
-                    <p class="product-price">- $199</p> 
-                </div>
-            </div>
-
-            <div class="product" data-aos="fade-up" data-aos-delay="200">
-
-                <div class="product-image">
-                    <div class="main-image">
-                        <img src="/static/images/product8.jpg" alt="product">
-                    </div>
-                    <div class="effect-image">
-                        <img src="{ % static 'images/product8-effect.jpg' %}" alt="product">
-                    </div>
-                    <div class="overlay-image">
-                        <button class="heartbtn" id="heart">
-                            &#10084;
-                        </button>
-                    </div>
-                </div>
-                <div class="product-details">
-                    <p class="product-name">Black Top</p>
-                    <p class="product-price">- $399</p> 
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- shop from insta section  -->
-
-    <section class="insta">
-        <h1 class="section-title">Shop From The Gram</h1>
-
-        <div class="posts">
-            <div class="post-image" data-aos="zoom-in" data-aos-delay="200">
-                <i class="fa-brands fa-instagram"></i>
-                <img src="{% static 'images/insta1.webp' % }" alt="insta">
-            </div>
-            <div class="post-image" data-aos="zoom-in" data-aos-delay="200">
-                <i class="fa-brands fa-instagram"></i>
-                <img src="{% static 'images/insta2.webp' % }" alt="insta">
-            </div>
-            <div class="post-image" data-aos="zoom-in" data-aos-delay="200">
-                <i class="fa-brands fa-instagram"></i>
-                <img src="{ % static 'images/insta3.webp' %}" alt="insta">
-            </div>
-            <div class="post-image" data-aos="zoom-in" data-aos-delay="200">
-                <i class="fa-brands fa-instagram"></i>
-                <img src="{ % static 'images/insta4.webp' %}" alt="insta">
-            </div>
-            <div class="post-image" data-aos="zoom-in" data-aos-delay="200">
-                <i class="fa-brands fa-instagram"></i>
-                <img src="{ % static 'images/insta5.webp' %}" alt="insta">
-            </div>
-            <div class="post-image" data-aos="zoom-in" data-aos-delay="200">
-                <i class="fa-brands fa-instagram"></i>
-                <img src="{ % static 'images/insta6.webp' %}" alt="insta">
-            </div>
-        </div>
-        <div class="feedback-container">
         
-            <h2>Have feedback?&nbsp;<a href="feedback.html" target="_blank"><span>Click here</span></a> to share your thoughts with us.</h2>
-        </div>
-    </section>
+ <!DOCTYPE html>
+ <html lang="en">
 
-    
-{ % endblock %}
-    
-    
-   </body>
+ <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="shortcut icon" href="{ % static 'images/logo1.png' %}" type="image/x-icon">
+            <title>TrendTrove - Ecommerce</title>
+            <link rel="stylesheet" href="{ % static 'static/preloader.js' %}">
+            <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <link rel="stylesheet" href="{ % static 'CSS/style.css' %}">
+            <link rel="stylesheet" herf="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+            <link rel="stylesheet" href="{% static 'CSS/popup.css' %}">
+
+ </head>
+
+ <body>
+
+     {% block content %}
+        
+            <!-- preloader -->
+        <div id="preloader">
+            <div class="wrapper">
+                <div class="box-wrap">
+                    <div class="box one"></div>
+                    <div class="box two"></div>
+                    <div class="box three"></div>
+                    <div class="box four"></div>
+                    <div class="box five"></div>
+                    <div class="box six"></div>
+                </div>
+            </div>
+        </div>
+            <!-- ProgressBar -->
+            <div id="progress-bar"></div>
+            <!-- ProgressBar Ends -->
+
+        
+        <!-- banner area  -->
+            <section class="banner">
+
+                <div class="slide">
+
+                    <div class="slide-details" data-aos="fade-up" data-aos-easing="ease-in-out">
+                        <h1>Discover Tomorrow’s Trends Today with TrendTrove!</h1>
+                        <p>
+                            At TrendTrove, we bring you the most stylish and trendy fashion items, all in one place!
+                        </p>
+                        <button class="btn">
+                            Explore More
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pop up Html  -->
+                <!-- Pop-up for email registration -->
+            <div id="popup" class="popup">
+                <div class="popup-content">
+                    <div class="popup-left">
+                        <img src="{ % static 'images/popup1.jpg' %}" alt="Fashion Image">
+                    </div>
+                    <div class="popup-right">
+                        <a href="#" class="no-thanks"><img class="popuplogo" src="{ % static 'images/logo.png' %}" alt="Logo" srcset=""></a>
+                        <h1>Join TrendTrove!</h1>
+
+                        <h2 class="popuph2">Unlock Your Fashion</h2>
+                        <p>Sign up now to enjoy <strong> 20% off </strong> your first order and exclusive updates on the latest trends.</p>
+                        <form id="emailForm">
+                            <input type="email" id="popup-email" placeholder="Enter your email" required>
+                            <button type="submit" class="signup-btn">Continue</button>
+                        </form>
+                        <a href="#" class="no-thanks close-btn">No thanks, I’ll shop full price</a>
+                        <p class="terms">By signing up, you agree to our <a href="terms-conditions.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- featured section  -->
+
+            <section class="featured">
+                <div class="featured-box-1">
+                    <div class="overlay">
+                        <a href="./shopclothing.html" class="btn btn-white">
+                            Shop Clothing
+                        </button></a>
+                    </div>
+                    <div class="bg-image">
+                        <img src="{% static 'images/youngcouple1.jpg' }" alt="product">
+                    </div>
+                </div>
+
+                <div class="featured-box-2">
+                    <div class="featured-box-2-box-1">
+                        <div class="overlay">
+                            <a href="/static/products/sunglasses.html" class="btn btn-white">
+                                Shop Sunglasses
+                            </a>
+                        </div>
+                        <div class="bg-image">
+                            <img src="{% static 'images/shop-glasses.webp' %}" alt="product">
+                        </div>
+                    </div>
+                    <div class="featured-box-2-box-2">
+                        <div class="overlay">
+                            <a href="/static/products/bags.html" class="btn btn-white">
+                                Shop Bags
+                            </a>
+                        </div>
+                        <div class="bg-image">
+                            <img src="{% static 'images/shop-bags.webp' %}" alt="product">
+                        </div>
+                    </div>
+
+                    <div class="featured-box-2-box-3">
+                        <div class="overlay">
+                            <a href="./products/sandals.html" class="btn btn-white">
+                                Shop Sandals
+                            </a>
+                        </div>
+                        <div class="bg-image">
+                            <img src="{% static 'images/shop-sandals.webp' %}" alt="product">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="featured-box-3">
+                    <div class="overlay">
+                        <a href="sneaker.html" class="btn btn-white">
+                            Shop Sneakers
+                        </a>
+                        
+                    </div>
+                    <div class="bg-image">
+                        <img src="{ % static 'images/shop-sneakers.webp' %}" alt="product">
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- products section  -->
+
+            <section class="products">
+                <h1 class="section-title">Top Products Of The Season!</h1>
+
+                <div class="products-list">
+
+                    <div class="product" data-aos="fade-up" data-aos-delay="200">
+                        <div class="product-image">
+                            <div class="main-image">
+                                <img src="{ % static 'images/blackstrippedmaneffectimage.jpg' %}" alt="product">
+                            </div>
+                            <div class="effect-image">
+                                <img src="{ % static 'images/blackstrippedmannormal.jpeg' %}" alt="product">
+                            </div>
+                            <div class="overlay-image">
+                                <button class="heartbtn" id="heart">
+                                    &#10084;
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <div class="product-details">
+                            <p class="product-name">Black Striped Shirt</p>
+                            <p class="product-price">- $199</p> 
+                        </div>
+
+                    </div>
+
+                    <div class="product" data-aos="fade-up" data-aos-delay="200">
+
+                        <div class="product-image">
+
+                            <div class="main-image">
+                                <img src="{ % static 'images/product2.jpg' %}" alt="product">
+                            </div>
+                            <div class="effect-image">
+                                <img src="{ % static 'images/product2-effect.jpg' %}" alt="product">
+                            </div>
+                            <div class="overlay-image">
+                                <button class="heartbtn" id="heart">
+                                    &#10084;
+                                </button>
+                            </div>
+
+
+                        </div>
+
+                        <div class="product-details">
+                            <p class="product-name">Black Top</p>
+                            <p class="product-price">- $99</p> 
+                        </div>
+
+                    </div>
+
+
+                    <div class="product" data-aos="fade-up" data-aos-delay="200">
+
+                        <div class="product-image">
+
+                            <div class="main-image">
+                                <img src="{ % static 'images/product3-effect.jpg' %}" alt="product">
+                            </div>
+                            <div class="effect-image">
+                                <img src="{ % static 'images/product3.webp' %}" alt="product">
+                            </div>
+                            <div class="overlay-image">
+                                <button class="heartbtn" id="heart">
+                                    &#10084;
+                                </button>
+                            </div>
+
+
+                        </div>
+
+                        <div class="product-details">
+                            <p class="product-name">Olive Green Top</p>
+                            <p class="product-price">- $100</p> 
+                        </div>
+
+                    </div>
+
+                    <div class="product" data-aos="fade-up" data-aos-delay="200">
+
+                        <div class="product-image">
+
+                            <div class="main-image">
+                                <img src="{ % static 'images/whitetshirtmen.jpeg' %}" alt="product">
+                            </div>
+                            <div class="effect-image">
+                                <img src="{ % static 'images/whitetshirtmeneffect.jpeg' %}" alt="product">
+                            </div>
+                            <div class="overlay-image">
+                                <button class="heartbtn" id="heart">
+                                    &#10084;
+                                </button>
+                            </div>
+
+
+                        </div>
+
+                        <div class="product-details">
+                            <p class="product-name">White T-shirt</p>
+                            <p class="product-price">- $100</p> 
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- category section  -->
+
+            <section class="categories">
+
+                <div class="category" data-aos="zoom-in" data-aos-delay="200">
+
+                    <div class="cat-img">
+                        <img src="{ % static 'images/category1.webp'%}" alt="category">
+                    </div>
+
+                    <div class="product-details">
+                        <p class="product-name">Night Suits</p>
+                    </div>
+
+                </div>
+
+                <div class="category" data-aos="zoom-in" data-aos-delay="200">
+
+                    <div class="cat-img">
+                        <img src="{ % static 'images/category2.webp'%}" alt="category">
+                    </div>
+
+                    <div class="product-details">
+                        <p class="product-name">Hand Bags</p>
+                    </div>
+                </div>
+
+                <div class="category" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="cat-img">
+                        <img src="{ % static 'images/category3.webp'%}" alt="category">
+                    </div>
+                    <div class="product-details">
+                        <p class="product-name">Funky Tops</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- products section 2 -->
+            <section class="products">
+                <h1 class="section-title">Most Bought Products Of The Month!</h1>
+
+                <div class="products-list">
+
+                    <div class="product" data-aos="fade-up" data-aos-delay="200">
+
+                        <div class="product-image">
+
+                            <div class="main-image">
+                                <img src="{ % static 'images/product5.jpg' %}" alt="product">
+                            </div>
+                            <div class="effect-image">
+                                <img src="{ % static 'images/product5-effect.jpg' %}" alt="product">
+                            </div>
+                            <div class="overlay-image">
+                                <button class="heartbtn" id="heart">
+                                    &#10084;
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="product-details">
+                            <p class="product-name">Black Top</p>
+                            <p class="product-price">- $100</p> 
+                        </div>
+                    </div>
+
+                    <div class="product" data-aos="fade-up" data-aos-delay="200">
+
+                        <div class="product-image">
+
+                            <div class="main-image">
+                                <img src="{% static 'images/product6.jpg' %}" alt="product">
+                            </div>
+                            <div class="effect-image">
+                                <img src="{% static 'images/product6-effect.jpg' %}" alt="product">
+                            </div>
+                            <div class="overlay-image">
+                                <button class="heartbtn" id="heart">
+                                    &#10084;
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="product-details">
+                            <p class="product-name">Red Top</p>
+                            <p class="product-price">- $100</p> 
+                        </div>
+
+                    </div>
+
+                    <div class="product" data-aos="fade-up" data-aos-delay="200">
+
+                        <div class="product-image">
+                            <div class="main-image">
+                                <img src="{ % static 'images/tealimageshirtmen.jpeg' %}" alt="product">
+                            </div>
+                            <div class="effect-image">
+                                <img src="{ % static 'images/tealshirtmeneffect.jpeg' %}" alt="product">
+                            </div>
+                            <div class="overlay-image">
+                                <button class="heartbtn" id="heart">
+                                    &#10084;
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="product-details">
+                            <p class="product-name">Light Teal Shirt</p>
+                            <p class="product-price">- $199</p> 
+                        </div>
+                    </div>
+
+                    <div class="product" data-aos="fade-up" data-aos-delay="200">
+
+                        <div class="product-image">
+                            <div class="main-image">
+                                <img src="/static/images/product8.jpg" alt="product">
+                            </div>
+                            <div class="effect-image">
+                                <img src="{ % static 'images/product8-effect.jpg' %}" alt="product">
+                            </div>
+                            <div class="overlay-image">
+                                <button class="heartbtn" id="heart">
+                                    &#10084;
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <p class="product-name">Black Top</p>
+                            <p class="product-price">- $399</p> 
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- shop from insta section  -->
+
+            <section class="insta">
+                <h1 class="section-title">Shop From The Gram</h1>
+
+                <div class="posts">
+                    <div class="post-image" data-aos="zoom-in" data-aos-delay="200">
+                        <i class="fa-brands fa-instagram"></i>
+                        <img src="{% static 'images/insta1.webp' % }" alt="insta">
+                    </div>
+                    <div class="post-image" data-aos="zoom-in" data-aos-delay="200">
+                        <i class="fa-brands fa-instagram"></i>
+                        <img src="{% static 'images/insta2.webp' % }" alt="insta">
+                    </div>
+                    <div class="post-image" data-aos="zoom-in" data-aos-delay="200">
+                        <i class="fa-brands fa-instagram"></i>
+                        <img src="{ % static 'images/insta3.webp' %}" alt="insta">
+                    </div>
+                    <div class="post-image" data-aos="zoom-in" data-aos-delay="200">
+                        <i class="fa-brands fa-instagram"></i>
+                        <img src="{ % static 'images/insta4.webp' %}" alt="insta">
+                    </div>
+                    <div class="post-image" data-aos="zoom-in" data-aos-delay="200">
+                        <i class="fa-brands fa-instagram"></i>
+                        <img src="{ % static 'images/insta5.webp' %}" alt="insta">
+                    </div>
+                    <div class="post-image" data-aos="zoom-in" data-aos-delay="200">
+                        <i class="fa-brands fa-instagram"></i>
+                        <img src="{ % static 'images/insta6.webp' %}" alt="insta">
+                    </div>
+                </div>
+                <div class="feedback-container">
+                
+                    <h2>Have feedback?&nbsp;<a href="feedback.html" target="_blank"><span>Click here</span></a> to share your thoughts with us.</h2>
+                </div>
+            </section>
+            <div class="gtranslate_wrapper"></div>
+                <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+        <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+        
+        
+        <script src="{ % static 'script/popup.js' %}"></script>
+
+            
+    {% endblock %}
+            
+            
+</body>
 
 </html>
 
