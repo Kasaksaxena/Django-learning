@@ -1,17 +1,19 @@
+ {% load static %}
+{% include "header.html" %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="images/logo1.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{ % static 'images/logo1.png' %}" type="image/x-icon">
     <title>TrendTrove - Ecommerce</title>
-    <link rel="stylesheet" href="/static/preloaderStyle.css">
-    <link rel="stylesheet" href="/static/https://unpkg.com/aos@next/dist/aos.css">
-    <link rel="stylesheet" href="/static/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/static//style.css">
-    <link rel="stylesheet" herf="/static/https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-    <link rel="stylesheet" href="/static//Style/popup.css">
+    <link rel="stylesheet" href="preloader.js">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{ % static 'CSS/style.css' %}">
+    <link rel="stylesheet" herf="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link rel="stylesheet" href="{% static 'CSS/popup.css' %}">
 
 </head>
 
@@ -33,147 +35,7 @@
     <div id="progress-bar"></div>
     <!-- ProgressBar Ends -->
 
-    <!-- header section  -->
-    <header class="header" id="header">
-        <div class="logo">
-            <a href="/"> <img  src="/static/images/logo.png" alt="Logo" srcset=""> </a>
-            <i class="fa-solid fa-bars menu" id="menu"></i>
-        </div>
-
-        <nav class="bg-neutral-100 py-20">
-            <div class="tabs-container">
-                <ul id="tabs" class="tabs">
-                    <li class="tab">
-                        <a href="index.html">Home</a>
-                        <div class="cursor"></div>
-                    </li>
-                    <li class="tab">
-                        <a href="about.html">About</a>
-                        <div class="cursor"></div>
-                    </li>
-                    <li class="tab">
-                        <a href="features.html">Features</a>
-                        <div class="cursor"></div>
-                    </li>
-                    <li class="dropdown tab">
-                        <a class="dropdown-parent">Products</a>
-                        <div class="cursor"></div>
-                        <ul class="dropdown-content ">
-                            <li><a href="mens.html" class="priye">Men</a>
-                            </li>
-                            <li><a href="womens.html">Women</a></li>
-                            <li><a href="child.html">Kid Section</a></li>
-                            <li><a href="accessories.html">Accessories</a></li>
-                        </ul>
-                    </li>
-                    <li class="tab" style="margin-left: 15px;">
-                        <a href="contact.html">Contact Us</a>
-                        <div class="cursor"></div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        
-       
-
-        <nav class="utils">
-            <ul class="nav-links">
-                <li class="nav-link">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </li>
-                <li class="nav-link">
-                    <a href="login-sginup.html">
-                        <i class="fa-solid fa-user"></i>
-                    </a>
-                </li>
-                <li class="nav-link">
-                    <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <!-- Search Bar -->
-    <div id="search-bar">
-        <input type=" text " id=" search " placeholder=" Search..." />
-        <button type="submit" id="search-btn">Go</button> <!-- Add ID to the button -->
-    </div>
-    <script src=" preloader.js "></script>
-    <style>
-    /* Style for the search bar, initially hidden */
-    #search-bar {
-        display: none;
-        position: absolute;
-        top: 60px; /* Adjust this to position the search bar just below the icon */
-        right: 20px; /* Align with the icon */
-        background-color: white;
-        padding: 10px;
-        border-radius: 5px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Css for language box */
-    .lang-box{
-        align-items: center;
-        margin-top: auto;
-        margin-bottom: auto;
-    }
-
-    /* Styling the input box and button */
-    #search-bar input {
-        padding:  5px;
-        width:  200px;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-        outline: none;
-    }
-
-    #search-bar button {
-        padding: 5px 10px;
-        background-color:black;
-        color: white;
-        border: none;
-        border-radius: 3px;
-        cursor: pointer;
-    }
-
-    #search-bar button:hover {
-        background-color:black;
-    }
-</style>
-
-<script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-        // Get the search icon and search bar elements
-        const searchIcon = document.getElementById("search-icon"); 
-        const searchBar = document.getElementById("search-bar");
-
-        // Toggle the visibility of the search bar when the icon is clicked
-        searchIcon.onclick = function() {
-            if (searchBar.style.display === "none" || searchBar.style.display === "") {
-                searchBar.style.display = "block";  // Show the search bar
-                searchBar.querySelector('input').focus(); // Automatically focus on the input field
-            } else {
-                searchBar.style.display = "none";  // Hide the search bar
-            }
-        }
-
-        // Search button functionality
-        const searchBtn = document.getElementById("search-btn");
-        searchBtn.onclick = function() {
-            var query = document.getElementById('search').value;
-            if(query) {
-                console.log("Search query:", query);
-                // Implement your search logic here, such as a redirect or an API call
-                // window.location.href = '/search-results?q=' + encodeURIComponent(query);
-
-                // Hide the search bar after clicking "Go"
-                searchBar.style.display = "none";
-            } else {
-                console.log("No search query entered");
-            }
-        }
-    });
-</script>
+   
  <!-- banner area  -->
     <section class="banner">
 
@@ -196,10 +58,10 @@
     <div id="popup" class="popup">
         <div class="popup-content">
             <div class="popup-left">
-                <img src="/static/images/popup1.jpg" alt="Fashion Image">
+                <img src="{ % static 'images/popup1.jpg' %}" alt="Fashion Image">
             </div>
             <div class="popup-right">
-                <a href="#" class="no-thanks"><img class="popuplogo" src="/static/images/logo.png" alt="Logo" srcset=""></a>
+                <a href="#" class="no-thanks"><img class="popuplogo" src="{ % static 'images/logo.png' %}" alt="Logo" srcset=""></a>
                 <h1>Join TrendTrove!</h1>
 
                 <h2 class="popuph2">Unlock Your Fashion</h2>
@@ -225,7 +87,7 @@
                 </button></a>
             </div>
             <div class="bg-image">
-                <img src="/static/images/youngcouple1.jpg" alt="product">
+                <img src="{% static 'images/youngcouple1.jpg' }" alt="product">
             </div>
         </div>
 
@@ -237,7 +99,7 @@
                     </a>
                 </div>
                 <div class="bg-image">
-                    <img src="/static/images/shop-glasses.webp" alt="product">
+                    <img src="{% static 'images/shop-glasses.webp' %}" alt="product">
                 </div>
             </div>
             <div class="featured-box-2-box-2">
@@ -247,7 +109,7 @@
                     </a>
                 </div>
                 <div class="bg-image">
-                    <img src="/static/images/shop-bags.webp" alt="product">
+                    <img src="{% static 'images/shop-bags.webp' %}" alt="product">
                 </div>
             </div>
 
@@ -258,7 +120,7 @@
                     </a>
                 </div>
                 <div class="bg-image">
-                    <img src="/static/images/shop-sandals.webp" alt="product">
+                    <img src="{% static 'images/shop-sandals.webp' %}" alt="product">
                 </div>
             </div>
         </div>
@@ -271,7 +133,7 @@
                 
             </div>
             <div class="bg-image">
-                <img src="/static/images/shop-sneakers.webp" alt="product">
+                <img src="{ % static 'images/shop-sneakers.webp' %}" alt="product">
             </div>
         </div>
     </section>
@@ -287,10 +149,10 @@
             <div class="product" data-aos="fade-up" data-aos-delay="200">
                 <div class="product-image">
                     <div class="main-image">
-                        <img src="/static/images/blackstrippedmaneffectimage.jpg" alt="product">
+                        <img src="{ % static 'images/blackstrippedmaneffectimage.jpg' %}" alt="product">
                     </div>
                     <div class="effect-image">
-                        <img src="/static/images/blackstrippedmannormal.jpeg" alt="product">
+                        <img src="{ % static 'images/blackstrippedmannormal.jpeg' %}" alt="product">
                     </div>
                     <div class="overlay-image">
                         <button class="heartbtn" id="heart">
@@ -312,10 +174,10 @@
                 <div class="product-image">
 
                     <div class="main-image">
-                        <img src="/static/images/product2.jpg" alt="product">
+                        <img src="{ % static 'images/product2.jpg' %}" alt="product">
                     </div>
                     <div class="effect-image">
-                        <img src="/static/images/product2-effect.jpg" alt="product">
+                        <img src="{ % static 'images/product2-effect.jpg' %}" alt="product">
                     </div>
                     <div class="overlay-image">
                         <button class="heartbtn" id="heart">
@@ -339,10 +201,10 @@
                 <div class="product-image">
 
                     <div class="main-image">
-                        <img src="/static/images/product3-effect.jpg" alt="product">
+                        <img src="{ % static 'images/product3-effect.jpg' %}" alt="product">
                     </div>
                     <div class="effect-image">
-                        <img src="/static/images/product3.webp" alt="product">
+                        <img src="{ % static 'images/product3.webp' %}" alt="product">
                     </div>
                     <div class="overlay-image">
                         <button class="heartbtn" id="heart">
@@ -365,10 +227,10 @@
                 <div class="product-image">
 
                     <div class="main-image">
-                        <img src="/static/images/whitetshirtmen.jpeg" alt="product">
+                        <img src="{ % static 'images/whitetshirtmen.jpeg' %}" alt="product">
                     </div>
                     <div class="effect-image">
-                        <img src="/static/images/whitetshirtmeneffect.jpeg" alt="product">
+                        <img src="{ % static 'images/whitetshirtmeneffect.jpeg' %}" alt="product">
                     </div>
                     <div class="overlay-image">
                         <button class="heartbtn" id="heart">
@@ -394,7 +256,7 @@
         <div class="category" data-aos="zoom-in" data-aos-delay="200">
 
             <div class="cat-img">
-                <img src="/static/images/category1.webp" alt="category">
+                <img src="{ % static 'images/category1.webp'%}" alt="category">
             </div>
 
             <div class="product-details">
@@ -406,7 +268,7 @@
         <div class="category" data-aos="zoom-in" data-aos-delay="200">
 
             <div class="cat-img">
-                <img src="/static/images/category2.webp" alt="category">
+                <img src="{ % static 'images/category2.webp'%}" alt="category">
             </div>
 
             <div class="product-details">
@@ -416,7 +278,7 @@
 
         <div class="category" data-aos="zoom-in" data-aos-delay="200">
             <div class="cat-img">
-                <img src="/static/images/category3.webp" alt="category">
+                <img src="{ % static 'images/category3.webp'%}" alt="category">
             </div>
             <div class="product-details">
                 <p class="product-name">Funky Tops</p>
@@ -436,10 +298,10 @@
                 <div class="product-image">
 
                     <div class="main-image">
-                        <img src="/static/images/product5.jpg" alt="product">
+                        <img src="{ % static 'images/product5.jpg' %}" alt="product">
                     </div>
                     <div class="effect-image">
-                        <img src="/static/images/product5-effect.jpg" alt="product">
+                        <img src="{ % static 'images/product5-effect.jpg' %}" alt="product">
                     </div>
                     <div class="overlay-image">
                         <button class="heartbtn" id="heart">
@@ -459,10 +321,10 @@
                 <div class="product-image">
 
                     <div class="main-image">
-                        <img src="/static/images/product6.jpg" alt="product">
+                        <img src="{% static 'images/product6.jpg' %}" alt="product">
                     </div>
                     <div class="effect-image">
-                        <img src="/static/images/product6-effect.jpg" alt="product">
+                        <img src="{% static 'images/product6-effect.jpg' %}" alt="product">
                     </div>
                     <div class="overlay-image">
                         <button class="heartbtn" id="heart">
@@ -482,10 +344,10 @@
 
                 <div class="product-image">
                     <div class="main-image">
-                        <img src="/static/images/tealimageshirtmen.jpeg" alt="product">
+                        <img src="{ % static 'images/tealimageshirtmen.jpeg' %}" alt="product">
                     </div>
                     <div class="effect-image">
-                        <img src="/static/images/tealshirtmeneffect.jpeg" alt="product">
+                        <img src="{ % static 'images/tealshirtmeneffect.jpeg' %}" alt="product">
                     </div>
                     <div class="overlay-image">
                         <button class="heartbtn" id="heart">
@@ -507,7 +369,7 @@
                         <img src="/static/images/product8.jpg" alt="product">
                     </div>
                     <div class="effect-image">
-                        <img src="/static/images/product8-effect.jpg" alt="product">
+                        <img src="{ % static 'images/product8-effect.jpg' %}" alt="product">
                     </div>
                     <div class="overlay-image">
                         <button class="heartbtn" id="heart">
@@ -530,27 +392,27 @@
         <div class="posts">
             <div class="post-image" data-aos="zoom-in" data-aos-delay="200">
                 <i class="fa-brands fa-instagram"></i>
-                <img src="/static/images/insta1.webp" alt="insta">
+                <img src="{% static 'images/insta1.webp' % }" alt="insta">
             </div>
             <div class="post-image" data-aos="zoom-in" data-aos-delay="200">
                 <i class="fa-brands fa-instagram"></i>
-                <img src="/static/images/insta2.webp" alt="insta">
+                <img src="{% static 'images/insta2.webp' % }" alt="insta">
             </div>
             <div class="post-image" data-aos="zoom-in" data-aos-delay="200">
                 <i class="fa-brands fa-instagram"></i>
-                <img src="/static/images/insta3.webp" alt="insta">
+                <img src="{ % static 'images/insta3.webp' %}" alt="insta">
             </div>
             <div class="post-image" data-aos="zoom-in" data-aos-delay="200">
                 <i class="fa-brands fa-instagram"></i>
-                <img src="/static/images/insta4.webp" alt="insta">
+                <img src="{ % static 'images/insta4.webp' %}" alt="insta">
             </div>
             <div class="post-image" data-aos="zoom-in" data-aos-delay="200">
                 <i class="fa-brands fa-instagram"></i>
-                <img src="/static/images/insta5.webp" alt="insta">
+                <img src="{ % static 'images/insta5.webp' %}" alt="insta">
             </div>
             <div class="post-image" data-aos="zoom-in" data-aos-delay="200">
                 <i class="fa-brands fa-instagram"></i>
-                <img src="/static/images/insta6.webp" alt="insta">
+                <img src="{ % static 'images/insta6.webp' %}" alt="insta">
             </div>
         </div>
         <div class="feedback-container">
@@ -560,273 +422,8 @@
     </section>
     
     
-    <!-- footer section  -->
-    <footer class="footer">
-
-        <div class="footer-section">
-
-            <h1>Contact Us</h1>
-            <ul class="footer-list">
-                <li>trendtrove1004@gmail.com</li>
-                <li>
-                    2nd Floor, Bandra West, Mumbai, Maharashtra 400050, India
-                </li>
-                <li>+91 xxxxxx2020</li>
-
-                <li class="border-list">
-                </li>
-                <li class="socials">
-                    <a href="https://www.linkedin.com/in/tejashri-taral-5006a82a0/" id="linkedin" target="_blank">
-                        <i class="fa-brands fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/Tejashri-Taral" id="github" target="_blank">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                    <a href="https://x.com/Tejashri_10?t=SWxALwKxy-nVrTcbYTFUcA&s=08" id="twitter" target="_blank">
-                        <i class="fa-brands fa-x-twitter"></i>
-                    </a>
-                    <a href="https://www.instagram.com/your_instagram" id="instagram" target="_blank">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-        <div class=" footer-section quick-links ">
-            <h1>Quick Links</h1>
-            <ul class="footer-list">
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="faq.html">FAQ's</a></li>
-                <li><a href="terms-conditions.html">Terms & Conditions</a></li>
-                <li><a href="return-policy.html">Return Policy</a></li>
-                <li><a href="https://github.com/Tejashri-Taral/TrendTrove-Ecommerce" target="_blank">Star Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-
-            </ul>
-        </div>
-
-        <div class="footer-section">
-            <h1>Subscribe to Newsletter</h1>
-            <ul class="footer-list">
-                <li>Be the first to know about exclusive deals and new arrivals straight to your inbox.</li>
-                <li>Join our fashion community today!</li>
-                <li class="sub">
-                    <input type="email" placeholder="Enter your email here" id="email-input">
-                    <button class="btn" id="open-btn">Subscribe</button>
-                </li>
-            </ul>
-        </div>
-
-    </footer>
-        
-        <div class="footer-copyright">
-            <div id="copyright">&copy; <span id="year"></span> TrendTrove. All Rights Reserved.</div>
-        </div>
-        
-        <script>
-            const currentYear = new Date().getFullYear();
-            document.getElementById('year').textContent = currentYear;
-        </script>
-        
-        <div class="modal-box" id="modalbox" style="display: none;">
-            <div class="modal" id="modal">
-                <div id="close-btn">&times;</div>
-                <div class="modal-content">
-                    <img src="images\confirmation.png" alt="" height="100px" >
-                    <h2>Subscription Successful!</h2>
-                    <p>Thank you for subscribing.</p>
-                    <p> You will receive notifications, updates via email.</p>
-                </div>
-                <div class="social">
-                    <li class="socials">
-                        <a href="https://www.linkedin.com/in/tejashri-taral-5006a82a0/" id="linkedin" target="_blank">
-                            <i class="fa-brands fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/Tejashri-Taral" id="github" target="_blank">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                        <a href="https://x.com/Tejashri_10?t=SWxALwKxy-nVrTcbYTFUcA&s=08" id="twitter" target="_blank">
-                            <i class="fa-brands fa-x-twitter"></i>
-                        </a>
-                        <a href="https://www.instagram.com/your_instagram" id="instagram" target="_blank">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </li>
-                </div>
-            </div>
-        </div>
-        
     
-    <script src="./script/modal_box.js"></script>
-    
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-    <!-- ProgressBar Functionality -->
-    <script>
-        window.onscroll = function () {
-            updateProgressBar();
-        };
-        function updateProgressBar() {
-            const windowScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const documentHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrollPercent = (windowScroll / documentHeight) * 100;
-            document.getElementById(" progress-bar ").style.width = scrollPercent + "%";
-        }
-
-    </script>
-    <!-- ProgressBar Functionality Ends-->
-    <script>
-        AOS.init();
-        let headerVisible = false;
-        document.getElementById("menu").addEventListener("click", function () {
-
-            if (headerVisible === false) {
-                document.getElementById("header").style.height = "280px";
-                headerVisible = true;
-            }
-            else {
-                document.getElementById("header").style.height = "50px";
-                headerVisible = false;
-            }
-
-        })
-    </script>
-<script>
-    gsap.from("#header", {
-        duration: 1.5,
-        y: -100,
-        opacity: 0,
-        ease: "power4.out",
-        stagger: 1,
-    });
-
-    gsap.from(".nav-link", {
-        duration: 1,
-        opacity: 0,
-        y: 20,
-        delay: 0.5,
-        stagger: 0.2,
-        ease: "power3.out"
-    });
-
-    gsap.from("h1", {
-        duration: 1,
-        opacity: 0,
-        y: 50,
-        delay: 0.7,
-        stagger: 0.2,
-        ease: "power3.out"
-    });
-
-    gsap.from("p", {
-        duration: 1.5,
-        opacity: 0,
-        y: 30,
-        delay: 0.9,
-        stagger: 0.3,
-        ease: "power2.out"
-    });
-
-    gsap.from(".btn", {
-        duration: 1,
-        scale: 0.8,
-        opacity: 0,
-        delay: 1.2,
-        ease: "back.out(1.7)",
-        stagger: 0.2
-    });
-
-    gsap.from("img", {
-        duration: 1.5,
-        opacity: 0,
-        scale: 0.9,
-        delay: 1.5,
-        stagger: 0.3,
-        ease: "elastic.out(1, 0.3)"
-    });
-
-    gsap.from(".overlay", {
-        duration: 1,
-        opacity: 0,
-        y: 50,
-        delay: 1.7,
-        stagger: 0.3,
-        ease: "power3.out"
-    });
-
-    gsap.from(".footer-section", {
-        scrollTrigger: ".footer",
-        duration: 1.5,
-        opacity: 0,
-        y: 50,
-        ease: "power2.out",
-        stagger: 0.3,
-    });
-
-    
-    gsap.from(".socials i", {
-        scrollTrigger: ".footer",
-        duration: 1,
-        opacity: 0,
-        scale: 0.5,
-        ease: "bounce.out",
-        stagger: 0.2,
-        delay: 0.5
-    });
-</script>
-
-<script>const tabs = document.querySelectorAll('.tab');
-    const cursor = document.getElementById('cursor');
-    
-    tabs.forEach(tab => {
-        tab.addEventListener(' mouseenter', () => {
-            cursor.style.width = `${tab.offsetWidth}px`; // Set width to the current tab's width
-            cursor.style.left = `${tab.offsetLeft}px`; // Move cursor to the current tab's position
-            cursor.style.opacity = 1; 
-        });
-    
-        tab.addEventListener(' mouseleave', () => {
-            cursor.style.opacity = 0; 
-        });
-    });
-    
-  </script>
-  <a class=" gotopbtn" href="#"><i class="fas fa-arrow-up"></i></a>
-  <script src=" https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-  AOS.init();
-
-  (function() {
-      let headerVisible = false;
-      document.getElementById(" menu").addEventListener("click", function () {
-          if (headerVisible === false) {
-              document.getElementById(" header").style.height = "290px";
-              headerVisible = true;
-          } else {
-              document.getElementById(" header").style.height = "50px";
-              headerVisible = false;
-          }
-      });
-
-      // Show "Go to Top" button after scrolling down
-      const goTopBtn = document.querySelector(" .gotopbtn");
-      window.addEventListener(" scroll", function () {
-          if (window.scrollY > 200) {  // Show the button after scrolling down 200px
-              goTopBtn.style.display = "block";
-          } else {
-              goTopBtn.style.display = "none";
-          }
-      });
-
-  })();  // IIFE to avoid polluting global scope
-</script>
-
-<div class="gtranslate_wrapper"></div>
-        <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-
-
-<script src="./script/popup.js"></script>
+    {% include "footer.html" %}
 
 </body>
 
