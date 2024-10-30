@@ -20,13 +20,13 @@ from learning import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('about-us/',views.aboutUS),
-    path('contact-us/',views.contactUS),
-    path('Login/',views.Login),
+    path('about-us/',views.aboutUS,name="about"),
+    path('contact-us/',views.contactUS , name="contact"),
+    path('Login/',views.Login,name="Login"),
    # path('course/<int:courseid>',views.courseDetails),
    # path('course/<str:courseid>',views.courseDetails),
      path('course/<slug:courseid>',views.courseDetails),
-     path('',views.homePage),
+     path('',views.homePage, name="home"),
     
     
     

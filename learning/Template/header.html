@@ -30,11 +30,11 @@
         <div class="tabs-container">
             <ul id="tabs" class="tabs">
                 <li class="tab">
-                    <a href="index.html">Home</a>
+                    <a href="{% url 'home' %}">Home</a>
                     <div class="cursor"></div>
                 </li>
                 <li class="tab">
-                    <a href="about.html">About</a>
+                    <a href="{% url 'about' %}">About</a>
                     <div class="cursor"></div>
                 </li>
                 <li class="tab">
@@ -53,7 +53,7 @@
                     </ul>
                 </li>
                 <li class="tab" style="margin-left: 15px;">
-                    <a href="contact.html">Contact Us</a>
+                    <a href="{% url 'contact' %}">Contact Us</a>
                     <div class="cursor"></div>
                 </li>
             </ul>
@@ -68,7 +68,7 @@
                 <i class="fa-solid fa-cart-shopping"></i>
             </li>
             <li class="nav-link">
-                <a href="login-sginup.html">
+                <a href="{% url 'Login' %}">
                     <i class="fa-solid fa-user"></i>
                 </a>
             </li>
