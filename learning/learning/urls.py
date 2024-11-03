@@ -27,7 +27,7 @@ urlpatterns = [
    # path('course/<str:courseid>',views.courseDetails),
      path('course/<slug:courseid>',views.courseDetails),
      path('',views.homePage, name="home"),
-    
+    path('userform/',views.form, name="form"),
     
     
 ]

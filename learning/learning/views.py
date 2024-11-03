@@ -31,4 +31,15 @@ def homePage(request):
     
     return render(request,"index.html")
 
-    
+def form(request):
+    finals=0
+    try:
+        #n1=int(request.GET['num1'])
+        #n2=int(request.GET['num2'])
+        n1=int(request.GET.get('num1'))
+        n2=int(request.GET.get('num2'))
+        finals=n1+n2
+    except:
+        pass    
+    return render(request,"form.html",{'output': finals})
+   
