@@ -56,7 +56,7 @@
                 </li>
                 {% url 'contact' as url %}
                 <li class="{% if request.path == url %} active {% endif %}" style="margin-left: 15px;">
-                    <a href="{{% url %}}">Contact Us</a>
+                    <a href="{% url 'contact' %}">Contact Us</a>
                     <div class="cursor"></div>
                 </li>
             </ul>
