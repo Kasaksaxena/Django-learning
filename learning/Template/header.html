@@ -29,11 +29,13 @@
     <nav class="bg-neutral-100 py-20">
         <div class="tabs-container">
             <ul id="tabs" class="tabs">
-                <li class="tab">
+                <!-- {{request.path}}-->
+
+                <li class="{% if request.path == '/'%} active {% endif %}">
                     <a href="{% url 'home' %}">Home</a>
                     <div class="cursor"></div>
                 </li>
-                <li class="tab">
+                <li class="{% if request.path == '/about-us/'%} active {% endif %}">
                     <a href="{% url 'about' %}">About</a>
                     <div class="cursor"></div>
                 </li>
@@ -52,8 +54,9 @@
                         <li><a href="accessories.html">Accessories</a></li>
                     </ul>
                 </li>
-                <li class="tab" style="margin-left: 15px;">
-                    <a href="{% url 'contact' %}">Contact Us</a>
+                {% url 'contact' as url %}
+                <li class="{% if request.path == url %} active {% endif %}" style="margin-left: 15px;">
+                    <a href="{{% url %}}">Contact Us</a>
                     <div class="cursor"></div>
                 </li>
             </ul>
