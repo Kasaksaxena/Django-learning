@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render
 
 def aboutUS(request):
@@ -6,7 +6,10 @@ def aboutUS(request):
     
 
 def contactUS(request):
-    return render(request,"contact.html")
+    print(request.method)
+    if request.method=="GET":
+        output=request.GET.get('output')
+    return render(request,"contact.html",{'output':output})
 
 def Login(request):
     return render(request,"login-sginup.html")
@@ -46,6 +49,9 @@ def form(request):
               'n2':n2,
               'output':finals
           }
+          url="/contact-us/?output={}".format(finals)
+          
+          return HttpResponseRedirect(url)
     except:
         pass    
     return render(request,"form.html",data)
