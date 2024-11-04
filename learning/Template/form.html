@@ -85,14 +85,15 @@
     </header>
     <div class="row">
         <div class="col-12">
-            <form >
+            <form method="POST" >
+                {% csrf_token %}
                 <div>
                     <label for="">Value1</label>
-                    <input type="text" name="num1" class="form-control">
+                    <input type="text" name="num1" value="{{n1}}"class="form-control">
                 </div>
                 <div>
                     <label for="">Value2</label>
-                    <input type="text" name="num2" class="form-control">
+                    <input type="text" name="num2" value="{{n2}}" class="form-control">
                 </div>
                 <div class="pt2">
                     <input type="submit" value="submit">
