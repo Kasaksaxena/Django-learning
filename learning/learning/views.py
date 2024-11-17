@@ -17,6 +17,26 @@ def Login(request):
 def courseDetails(request,courseid):
     return HttpResponse(courseid)
 
+def submitform(request):
+    
+    try:
+        if request.method=="POST":
+        #n1=int(request.GET['num1'])
+        #n2=int(request.GET['num2'])
+          n1=int(request.POST.get('num1'))
+          n2=int(request.POST.get('num2'))
+          finals=n1+n2
+          data={
+              'n1':n1,
+              'n2':n2,
+              'output':finals
+          }
+          
+          return HttpResponse(finals)
+    except:
+     pass
+
+
 def homePage(request):
     """data={
         'title':"Home page",

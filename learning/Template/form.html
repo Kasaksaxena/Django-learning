@@ -85,7 +85,7 @@
     </header>
     <div class="row">
         <div class="col-12">
-            <form method="POST" >
+            <form method="POST" action="{% url 'submitform' %}">
                 {% csrf_token %}
                 <div>
                     <label for="">Value1</label>
