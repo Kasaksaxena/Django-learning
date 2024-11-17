@@ -18,6 +18,32 @@ def Login(request):
 def courseDetails(request,courseid):
     return HttpResponse(courseid)
 
+def calculator(request):
+    c=''
+    try:
+        if request.method=="Post":
+            n1=eval(request.POST.get("num1"))
+            n2=eval(request.POST.get("num2"))
+            opr=request.POST.get("opr")
+            
+            if opr=="+":
+                c=n1+n2
+            elif opr=="-":
+                c=n1-n2
+            elif opr=="*":
+                c=n1*n2
+            elif opr=="/":
+                c=n1/n2
+            elif opr=="%":
+                c=n1%n2
+            
+              
+                
+    except:
+        c="Invalid operator" 
+        print(c)  
+    return render(request,"calculator.html",{"result":c})
+
 def submitform(request):
     
     try:
