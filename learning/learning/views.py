@@ -1,5 +1,6 @@
 from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render
+from .forms import Userforms
 
 def aboutUS(request):
     return render(request,"about.html")
@@ -56,7 +57,8 @@ def homePage(request):
 
 def form(request):
     finals=0
-    data={}
+    fn=Userforms()
+    data={'form':fn}
     try:
         if request.method=="POST":
         #n1=int(request.GET['num1'])
@@ -65,8 +67,8 @@ def form(request):
           n2=int(request.POST.get('num2'))
           finals=n1+n2
           data={
-              'n1':n1,
-              'n2':n2,
+              'form':fn,
+              
               'output':finals
           }
           url="/contact-us/?output={}".format(finals)

@@ -87,14 +87,15 @@
         <div class="col-12">
             <form method="POST" action="{% url 'submitform' %}">
                 {% csrf_token %}
-                <div>
+                {{form}}
+                <!-- <div>
                     <label for="">Value1</label>
                     <input type="text" name="num1" value="{{n1}}"class="form-control">
                 </div>
                 <div>
                     <label for="">Value2</label>
                     <input type="text" name="num2" value="{{n2}}" class="form-control">
-                </div>
+                </div> -->
                 <div class="pt2">
                     <input type="submit" value="submit">
                 </div>
