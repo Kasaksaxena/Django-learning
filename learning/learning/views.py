@@ -81,6 +81,37 @@ def homePage(request):
     
     return render(request,"index.html")
 
+def marksheet(request):
+    if request.method== "POST":
+        s1=eval(request.POST.get("subject1"))
+        s2=eval(request.POST.get("subject2"))
+        s3=eval(request.POST.get("subject3"))
+        s4=eval(request.POST.get("subject4"))
+        s5=eval(request.POST.get("subject5"))
+        t=s1+s2+s3+s4+s5
+        p=t*100/500
+        if p>=80:
+            d="First division"
+        elif p>=60:
+            d=" Second division division"
+        elif p>=40:
+            d=" Third division"
+        else:
+            p>=70
+            d="FAIL"
+            
+        data={
+             "total":t,
+             "per":p,
+             "div":d
+         }  
+        return render(request,"marksheet.html",data) 
+        
+        
+        
+    return render(request,"marksheet.html")    
+        
+
 def form(request):
     finals=0
     fn=Userforms()

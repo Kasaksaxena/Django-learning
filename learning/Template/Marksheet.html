@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marskeet</title>
+</head>
+<h1>Marsheet class 12</h1>
+<body>
+    < class="row">
+        < class="col12">
+            <form  method="post">
+                {% csrf_token %}
+                <div>
+                <label for="subject1">Subject1</label>
+            
+                <input type="text" name="subject1">
+            </div>
+            <div>
+                <label for="subject1">Subject2</label>
+            
+                <input type="text" name="subject2">
+            </div>
+            <div>
+                <label for="subject1">Subject3</label>
+            
+                <input type="text" name="subject3">
+            </div>
+            <div>
+                <label for="subject1">subject4</label>
+                <input type="text" name="subject4">
+            </div>
+            <div>               
+                 <label for="subject1">Subject5</label>
+                <input type="text" name="subject5">
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+            <div>
+                <label for="total">total</label>
+            
+                <input type="text" name="total" value="{{total}}">
+            </div>
+            <div>
+
+                <label for="percentage">Percentage</label>
+                <input type="text" name="percentage" value="{{per}}">
+            </div>
+            <div>
+                
+                <label for="Division">Division</label>
+                <input type="text" name="Division" value="{{div}}">
+            </div>
+                
+
+
+            </form>
+
+        </div>
+
+    </div>
+    
+</body>
+</html>
