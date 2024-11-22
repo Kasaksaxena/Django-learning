@@ -83,6 +83,9 @@ def homePage(request):
 
 def marksheet(request):
     if request.method== "POST":
+        if request.POST.get('subject1')=="":
+            return render(request,"marksheet.html",{"error":True})
+        
         s1=eval(request.POST.get("subject1"))
         s2=eval(request.POST.get("subject2"))
         s3=eval(request.POST.get("subject3"))

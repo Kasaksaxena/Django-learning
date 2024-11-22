@@ -7,9 +7,15 @@
 </head>
 <h1>Marsheet class 12</h1>
 <body>
-    < class="row">
-        < class="col12">
+    <div class="row">
+        <div class="col12">
             <form  method="post">
+                {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    Please enter the value
+
+                </div>
+                {% endif %}
                 {% csrf_token %}
                 <div>
                 <label for="subject1">Subject1</label>
