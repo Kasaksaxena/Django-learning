@@ -67,7 +67,7 @@ def submitform(request):
 
 def homePage(request):
     #serviceData=Service.objects.all() // extract table data
-    serviceData=Service.objects.all().order_by('-service_title')
+    serviceData=Service.objects.all().order_by('-service_title')[2:5]#cant use negative slicing
     #descendirng order
     # use for loop in the html section to implement
     
