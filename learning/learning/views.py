@@ -1,6 +1,7 @@
 from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render
 from .forms import Userforms
+from service.models import Service
 
 def aboutUS(request):
     return render(request,"about.html")
@@ -65,6 +66,19 @@ def submitform(request):
 
 
 def homePage(request):
+    #serviceData=Service.objects.all() // extract table data
+    serviceData=Service.objects.all().order_by('-service_title')
+    #descendirng order
+    # use for loop in the html section to implement
+    
+    data={
+        'serviceData':serviceData
+        
+    }
+    
+    
+    
+    
     """data={
         'title':"Home page",
         'Name':"Kasak Saxena",
@@ -79,7 +93,7 @@ def homePage(request):
     return render(request,"index.html",data)
     """
     
-    return render(request,"index.html")
+    return render(request,"index.html",data)
 
 def marksheet(request):
     if request.method== "POST":
