@@ -75,6 +75,9 @@ def homePage(request):
         'serviceData':serviceData
         
     }
+    """ Template filters 
+    ex- {{n,service_des |safe}},{{n,service_des |lower}},{{n,service_des |upper}}
+    """
     
     
     
