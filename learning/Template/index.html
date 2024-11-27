@@ -18,10 +18,33 @@
             <link rel="stylesheet" href="{% static 'CSS/popup.css' %}">
 
  </head>
+ <style>
+    .marquee{
+        overflow: hidden;
+        white-space:nowwrap;
+        animation:scroll 10s linear infinite;
+    }
+    @keyframes scroll {
+        from {
+            transform:translateX(100%);
+        }
+        to {
+            transform: translateX(-100%);
+        }
+    }
+ </style>
 
  <body>
 
      {% block content %}
+
+
+     <div class="marquee">
+        {% for message in messages %}
+          {{message}}
+        {% endfor %}  
+
+     </div>
         
             <!-- preloader -->
         <div id="preloader">

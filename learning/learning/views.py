@@ -70,9 +70,10 @@ def homePage(request):
     serviceData=Service.objects.all().order_by('-service_title')[2:5]#cant use negative slicing
     #descendirng order
     # use for loop in the html section to implement
-    
+    messages={"Welcome to Django","Learn modern web development","KASAK SAXENA"}
     data={
-        'serviceData':serviceData
+        'serviceData':serviceData,
+        'messages':messages
         
     }
     """ Template filters 
