@@ -63,7 +63,16 @@ def submitform(request):
           return HttpResponse(finals)
     except:
      pass
-
+# filter work in django
+    """ use in search bar 
+    ex-{ exact,iexact,contains,icontains,startswith etc..}
+    ex search book by name or author anything
+    title=title.objects.all()
+    if request.method=="GET":
+     st=request.GET.get('bookname')
+    if st!=None:
+       book=Books.objects.filter(title__icontains=st)
+    """
 
 def homePage(request):
     #serviceData=Service.objects.all() // extract table data
